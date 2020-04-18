@@ -1,0 +1,76 @@
+import random
+i = 0
+point1 = 0
+point2 = 0
+characters = ["Snake", "Water", "Gun"]
+chances = int(input("Enter no. of Chances:"))
+chances1 = chances
+while(i!=chances1):
+    computer = random.choice(characters)
+    user = input("Enter Snake / Water / Gun:")
+    if(user == "Snake" or user == "Water" or user == "Gun"):
+        if(computer == "Snake" and user == "Gun"):
+            print("Computer choice: Snake")
+            print("You WON")
+            chances = chances - 1
+            i = i + 1
+            point1 = point1 + 1
+            print("You scored", point1, "points")
+        elif (computer == "Gun" and user == "Snake"):
+            print("Computer choice: Gun")
+            print("Computer WON")
+            chances = chances - 1
+            i = i + 1
+            point2 = point2 + 1
+            print("Computer scored", point2, "points")
+        elif(computer == "Snake" and user == "Water"):
+            print("Computer choice: Snake")
+            print("Computer WON")
+            chances = chances - 1
+            i = i + 1
+            point2 = point2 + 1
+            print("Computer scored", point2, "points")
+        elif (computer == "Water" and user == "Snake"):
+            print("Computer Choice: Water")
+            print("You WON")
+            chances = chances - 1
+            i = i + 1
+            point1 = point1 + 1
+            print("You scored", point1, "points")
+        elif(computer == "Water" and user == "Gun"):
+            print("Computer Choice: Water")
+            print("Computer WON")
+            chances = chances - 1
+            i = i + 1
+            point2 = point2 + 1
+            print("Computer scored", point2, "points")
+        elif(computer == "Gun" and user == "Water"):
+            print("Computer Choice: Gun")
+            print("You WON")
+            chances = chances - 1
+            i = i + 1
+            point1 = point1 + 1
+            print("You scored", point1, "points")
+        else:
+            chances = chances - 1
+            i = i + 1
+            print("Computer Choice:", user)
+            print("Same Choice: No point")
+    else:
+        print("Invalid: Choice selection")
+print("\n\n RESULT OF THE GAME.")
+print("--------------------------")
+print("\nOverall Performance: You WON =", point1)
+print("Overall Performance: Computer WON =", point2)
+if(point1 > point2):
+    print("CONGRATULATIONS...... YOU WON ON COMPUTER.")
+elif(point1 == point2):
+    print("WOWW... YOU BOTH ARE GENIUS ACQUIRED SAME POINTS")
+else:
+    print("SORRY.... YOU HAVE LOST ON COMPUTER.")
+
+
+
+
+
+
